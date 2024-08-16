@@ -42,7 +42,7 @@ fun StaggeredScreen(navController: NavHostController, message: String) {
             modifier = Modifier.padding(5.dp)
         )
         Button(onClick = { navController.navigateUp() }) {
-            Text("Fuck! Go Back")
+            Text("Go Back")
         }
         Spacer(modifier = Modifier.height(40.dp))
 

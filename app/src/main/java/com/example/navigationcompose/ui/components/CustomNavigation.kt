@@ -15,9 +15,9 @@ import com.example.navigationcompose.ui.screens.VerticalScreen
 import com.example.navigationcompose.ui.theme.NavigationcomposeTheme
 
 @Composable
-fun CustomNavigation(navController: NavHostController) {
+fun CustomNavigation(navController: NavHostController,textFieldValue: String) {
     NavHost(navController, startDestination = "home") {
-        composable("home") { HomeScreen(navController) }
+        composable("home") { HomeScreen(navController,textFieldValue) }
         composable(
             "detailsLazy/{message}",
             arguments = listOf(navArgument("message") { type = NavType.StringType })
@@ -52,6 +52,6 @@ fun CustomNavigation(navController: NavHostController) {
 fun PreviewCustomNavigation() {
     NavigationcomposeTheme {
         val navController = rememberNavController()
-        CustomNavigation(navController = navController)
+        CustomNavigation(navController = navController,"Kaboom")
     }
 }

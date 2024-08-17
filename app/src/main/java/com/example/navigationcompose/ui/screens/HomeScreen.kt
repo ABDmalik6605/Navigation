@@ -15,20 +15,20 @@ import androidx.navigation.NavHostController
 import com.example.navigationcompose.ui.theme.NavigationcomposeTheme
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(navController: NavHostController,textFieldValue: String) {
     Column {
         Text(text = "Home Screen", color = Color.White)
-            Button(onClick = { navController.navigate("detailsLazy/HelloWorld") }) {
+            Button(onClick = { navController.navigate("detailsLazy/$textFieldValue") }) {
                 Text("Lazy column")
             }
         Spacer(modifier = Modifier.height(5.dp))
 
-            Button(onClick = { navController.navigate("detailsVertical/HelloWorld") }) {
+            Button(onClick = { navController.navigate("detailsVertical/$textFieldValue") }) {
                 Text("Lazy vertical\ngrid")
             }
         Spacer(modifier = Modifier.height(10.dp))
 
-            Button(onClick = { navController.navigate("detailsStaggering/HelloWorld") }) {
+            Button(onClick = { navController.navigate("detailsStaggering/$textFieldValue") }) {
                 Text("Lazy vertical\nStaggering grid")
             }
 
